@@ -8,15 +8,17 @@ package com.haz.mymusic.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.haz.mymusic.R;
 import com.haz.mymusic.helps.MediaPlayerHelper;
+import com.haz.mymusic.helps.UserHelp;
 import com.haz.mymusic.utils.UserUtils;
 import com.haz.mymusic.views.PlayMusicView;
 
 public class MeActivity extends BaseActivity {
-
+private TextView mTvUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +27,9 @@ public class MeActivity extends BaseActivity {
     }
 
     private void initView() {
-        intiNavBar(true,"个人中心",false);
+        intiNavBar(true, "个人中心", false);
+        mTvUser = fd(R.id.tv_user);
+        mTvUser.setText("用户名：" + UserHelp.getInstance().getPhone());
     }
 
     /**

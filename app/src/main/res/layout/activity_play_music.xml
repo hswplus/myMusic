@@ -32,6 +32,7 @@
         android:layout_marginTop="480dp">
 
         <TextView
+            android:id="@+id/tv_music_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="音乐名称"
@@ -39,6 +40,7 @@
             android:textStyle="bold"
             android:textSize="@dimen/titleSize" />
         <TextView
+            android:id="@+id/tv_music_author"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="作者"

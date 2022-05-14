@@ -34,7 +34,6 @@ public class LoginActivity extends BaseActivity {
         intiNavBar(false,"登录",false);
         mInputPhone = fd(R.id.input_phone);
         mInputPasswprd = fd(R.id.input_password);
-
     }
 
     /**
@@ -49,13 +48,13 @@ public class LoginActivity extends BaseActivity {
      * 登录按钮点击事件
      */
     public void onCommitClick(View view) {
-
         String phone = mInputPhone.getInputStr();
         String password = mInputPasswprd.getInputStr();
         // 验证用户输入是否合法
         if (!UserUtils.validateLogin(this, phone, password)) {
             return;
         }
+
         // 跳转到应用主页
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);

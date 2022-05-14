@@ -3,15 +3,15 @@ package com.haz.mymusic.models;
 /**
  * @author: hswplus
  * @date: 2022/4/14
- * @Description: 用户模型类 继承了RealmObject
+ * @Description:
  */
 
 
-public class UserModel {
+public class User {
 
-    private String phone;
+    public String phone;
 
-    private String password;
+    public String password;
 
     public String getPhone() {
         return phone;
@@ -26,6 +26,14 @@ public class UserModel {
     }
 
     public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public User() {
+    }
+
+    public User(String phone, String password) {
+        this.phone = phone;
         this.password = password;
     }
 }
