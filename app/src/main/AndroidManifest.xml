@@ -2,9 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.haz.mymusic">
 
+    <uses-permission android:name="andriod.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:networkSecurityConfig="@xml/network_service_config"
         android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/logo"
