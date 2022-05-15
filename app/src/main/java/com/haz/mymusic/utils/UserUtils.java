@@ -142,11 +142,17 @@ public class UserUtils {
      */
     public static boolean validateUser(DBAdpter dbAdpter, String phone, String password) {
         dbAdpter.open();
+        User user = new User();
         boolean result = false;
-        List<User> user = dbAdpter.getOneUser(phone);
+        List<User> userList = dbAdpter.getOneUser(phone);
+        // 找不到用户，直接返回 false
+        if (userList ==null) {
+            return result;
+        }
+        user = userList.get(0);
         // 密码正确，返回true
-        if (user.get(0).password.equals(EncryptUtils.encryptMD5ToString(password))) {
-            return true;
+        if (user.password.equals(EncryptUtils.encryptMD5ToString(password))) {
+            result = true;
         }
         dbAdpter.close();
         return result;
